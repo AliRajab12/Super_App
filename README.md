@@ -8,7 +8,7 @@ A multi-service Flutter super app inspired by Careem — bringing food delivery,
 
 ## 📱 Screenshots
 
-> _Add your screenshots here: `/screenshots/home.png`, `/screenshots/food.png`, etc._
+
 
 ---
 
