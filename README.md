@@ -1,6 +1,6 @@
 # 🚀 Super App
 
-A multi-service Flutter super app inspired by Careem — bringing food delivery, visa services, salon bookings, pharmacy, and more into a single seamless experience.
+A multi-service Flutter super app  — bringing food delivery, visa services, salon bookings, pharmacy, and more into a single seamless experience.
 
 > **Status:** UI Complete · Backend Integration In Progress
 
