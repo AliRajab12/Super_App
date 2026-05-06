@@ -1,0 +1,1 @@
+enum AppButtonType { filled, disabled, text }

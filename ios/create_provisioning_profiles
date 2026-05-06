@@ -1,0 +1,18 @@
+CONNECT_KEY_PATH=./keys/app_store_connect_key.p8
+CERT_KEY_PATH=./keys/app_store_cert_key.cer
+if [ ! -f "$CONNECT_KEY_PATH" ] || [ ! -f "$CERT_KEY_PATH" ]; then
+    echo "Keys not found, aborting"
+    exit
+fi
+
+pip3 install codemagic-cli-tools
+
+export APP_STORE_CONNECT_PRIVATE_KEY=`cat app_store_connect_key.p8`
+export CERTIFICATE_PRIVATE_KEY=`cat app_store_cert_key.cer`
+
+app-store-connect fetch-signing-files com.degreed.Degreed-Staging.Degreed --create --platform IOS --strict-match-identifier --type IOS_APP_ADHOC
+app-store-connect fetch-signing-files com.degreed.Degreed-Release.Degreed --create --platform IOS --strict-match-identifier --type IOS_APP_ADHOC
+app-store-connect fetch-signing-files com.degreed.Degreed-Beta.Degreed --create --platform IOS --strict-match-identifier --type IOS_APP_ADHOC
+app-store-connect fetch-signing-files com.degreed.Degreed-Beta.Degreed --create --platform IOS --strict-match-identifier --type IOS_APP_STORE
+app-store-connect fetch-signing-files com.degreed.Degreed --create --platform IOS --strict-match-identifier --type IOS_APP_ADHOC
+app-store-connect fetch-signing-files com.degreed.Degreed --create --platform IOS --strict-match-identifier --type IOS_APP_STORE

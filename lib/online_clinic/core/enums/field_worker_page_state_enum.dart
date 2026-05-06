@@ -1,0 +1,1 @@
+enum FieldWorkerPageStateEnum{location,edit}

@@ -1,0 +1,1 @@
+enum AppointmentTypeEnum { today, upComing,completed , suggestion }

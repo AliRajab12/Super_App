@@ -1,0 +1,1 @@
+enum AppointmentPriorityTypeEnum { urgent, regular }

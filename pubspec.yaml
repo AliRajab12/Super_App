@@ -1,0 +1,224 @@
+name: Super_App
+description: Super Mobile
+
+publish_to: 'none'
+
+version: 4.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <4.0.0"
+  flutter: 3.13.9
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+
+  cupertino_icons: ^1.0.2
+
+  # Plugins
+  device_info_plus: 
+  flutter_web_auth: 
+  package_info_plus: 
+  path_provider: 
+  url_launcher: 
+  easy_image_viewer: 
+  native_device_orientation: 
+  image_picker: 
+  file_picker: 
+  video_player:
+
+  # Code Management
+  freezed_annotation:
+  json_annotation:
+
+  # Architecture
+  go_router: 
+  auto_route: 
+  bloc: 
+  flutter_bloc: 
+  get_it: 
+  provider: 
+  syncfusion_flutter_datepicker: 
+  equatable: 
+  text_scroll:
+
+  # Networking
+  dio: 
+  dio_cache_interceptor: 
+  dio_cache_interceptor_file_store: 
+  dio_smart_retry:
+  pretty_dio_logger: 
+
+  # Storage
+  flutter_cache_manager:
+  flutter_secure_storage: 
+  hive: 
+  hive_flutter: 
+  shared_preferences: 
+
+  # UI / Widgets
+  flutter_html: ^3.0.0-alpha.5
+  flutter_keyboard_visibility: 
+  flutter_markdown:
+  lazy_load_indexed_stack: 
+  linked_scroll_controller: 
+  google_maps_flutter: 
+  geolocator: 
+  geocoding: 
+  location: 
+  flutter_address_from_latlng:
+  search_map_location:
+    path: ./search_location_package/
+  shimmer: 
+  simple_animations: 
+  scrollable_positioned_list: 
+
+  # Image Handling
+  cached_network_image:
+  cloudinary_public: 
+  cropperx: 
+  flutter_svg: 
+  flutter_svg_provider:
+
+  # Utilities
+  circular_buffer: 
+  collection:
+  diff_match_patch: 
+  encrypt:
+  firebase_crashlytics:
+  flutter_timezone: 
+  launchdarkly_flutter_client_sdk: 
+  platform:
+  firebase_core: 
+  crypto: 
+  hexcolor:
+  flexi_image_slider:
+  asn1lib: 
+  http_parser: 
+  smooth_page_indicator: 
+
+  # Push notifications
+  firebase_messaging: 
+  flutter_local_notifications: 
+
+  # Permissions for push notifications
+  permission_handler:
+
+  grouped_list:
+  webview_flutter: 
+  flutter_inappwebview: 
+
+  # Twilio
+  twilio_phone_verify: 
+  twilio_flutter: 
+
+
+  # OTP phone login
+  pin_code_fields: 
+  lottie: 
+  intl_phone_field: 
+  country_pickers: 
+
+  rename:
+  country_picker: 
+
+  flutter_screenutil: 
+  gap: 
+  dropdown_button2:
+
+  #  Chat
+  jitsi_meet_wrapper:
+  agora_rtc_engine:
+  agora_rtm: 
+  stop_watch_timer: 
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  intl_translation:
+  analyzer: ^8.4.1
+
+  # Testing
+  bloc_test: ^10.0.0
+  mockito: ^5.4.2
+  mocktail: ^1.0.5
+  golden_toolkit: ^0.15.0
+  fake_async: ^1.3.1
+  http_mock_adapter: ^0.6.1
+
+  # Code gen
+  auto_route_generator: ^10.4.0
+  build_runner: ^2.4.8
+  freezed: ^3.2.3
+  json_serializable: ^6.2.0
+  flutter_rating_bar: ^4.0.1
+  carousel_slider: ^5.1.2
+  expandable_page_view: ^1.0.17
+  dartz: ^0.10.1
+
+  # rules and activating additional ones.
+  flutter_lints: ^6.0.0
+
+
+  flutter_launcher_icons:
+
+
+flutter:
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+  generate: true
+  assets:
+    - images/play_store_512.png
+    - images/
+    - images/onine_clinic_png/
+    - images/lottie/
+    - images/illustrations/
+    - images/MenuItems/
+    - images/services/
+    - images/svg/
+    - images/placeholders/profile/
+    - images/placeholders/content/abstract/
+    - images/placeholders/content/icon_patterns/
+    - fonts/
+
+  fonts:
+    - family: Antonia
+      fonts:
+        - asset: fonts/AntoniaH1-Black.otf
+          weight: 900
+    - family: Univers
+      fonts:
+        - asset: fonts/UniversNextProBlack.ttf
+        - asset: fonts/UniversNextProBold.ttf
+        - asset: fonts/UniversNextProHeavy.ttf
+        - asset: fonts/UniversNextProItalic.ttf
+        - asset: fonts/UniversNextProLight.ttf
+        - asset: fonts/UniversNextProMedium.ttf
+        - asset: fonts/UniversNextProRegular.ttf
+        - asset: fonts/UniversNextProThin.ttf
+        - asset: fonts/UniversNextProUltraLight.ttf
+    - family: Poppins
+      fonts:
+        - asset: fonts/Poppins-Bold.ttf
+          style: normal
+          weight: 900
+    - family: Poppins
+      fonts:
+        - asset: fonts/Poppins-Regular.ttf
+          style: normal
+          weight: 400
+    - family: Poppins
+      fonts:
+        - asset: fonts/Poppins-Medium.ttf
+          style: normal
+          weight: 500
+flutter_launcher_icons:
+    android: true
+    ios: true
+    image_path: "images/app_icon.png"
+    adaptive_icon_background: "#ffffff"

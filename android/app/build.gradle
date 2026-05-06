@@ -1,0 +1,140 @@
+// Create a variable called keystorePropertiesFile, and initialize it to your
+// keystore.properties file, in the rootProject folder.
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def localProperties = new Properties()
+// Load your keystore.properties file into the keystoreProperties object.
+if (keystorePropertiesFile.exists()) {
+    keystorePropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    throw new GradleException("versionCode not found. Define flutter.versionCode in the local.properties file.")
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    throw new GradleException("versionName not found. Define flutter.versionName in the local.properties file.")
+}
+
+apply plugin: 'com.android.application'
+// START: FlutterFire Configuration
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+// END: FlutterFire Configuration
+apply plugin: 'kotlin-android'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+
+android {
+    compileSdkVersion 34
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        applicationId "com.somimobile.superapp"
+        minSdkVersion 27
+        targetSdkVersion 34
+        compileSdkVersion 34
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+    }
+
+    def keystoreProperties = new Properties()
+    keystoreProperties.load(new FileInputStream(rootProject.file("keystore.properties")))
+    signingConfigs {
+        release {
+            // keystore file in the same directory as the build.gradle file.
+            storeFile file("somi")
+            keyAlias "somi1234"
+            keyPassword 'somi1234'
+            storePassword 'somi1234'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        // useful for troubleshooting proguard rules problems (crashes on release build only)
+        //        debug {
+        //            minifyEnabled true
+        //            shrinkResources true
+        //            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        //        }
+    }
+
+    flavorDimensions "environment"
+
+    productFlavors {
+        production {
+            dimension "environment"
+            applicationId "com.somimobile.superapp"
+            resValue "string", "app_name", "Somi"
+            manifestPlaceholders = [ hostname : "" ]
+        }
+
+        rel {
+            dimension "environment"
+            applicationId "com.somimobile.superapp.release"
+            resValue "string", "app_name", "Somi Release"
+            manifestPlaceholders = [ hostname : "" ]
+            versionName flutterVersionName + "-release"
+        }
+
+        beta {
+            dimension "environment"
+            applicationId "com.somimobile.superapp.beta"
+            resValue "string", "app_name", "Somi Beta"
+            manifestPlaceholders = [ hostname : "" ]
+            versionName flutterVersionName + "-beta"
+        }
+
+        staging {
+            dimension "environment"
+            applicationId "com.somimobile.superapp.staging"
+            resValue "string", "app_name", "Somi Staging"
+            manifestPlaceholders = [ hostname : "" ]
+            versionName flutterVersionName + "-staging"
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation platform('com.google.firebase:firebase-bom:32.3.1')
+}

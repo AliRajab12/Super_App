@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>222531353080-79q82vftmiofh3kuof7avl5on3ua8e96.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.222531353080-79q82vftmiofh3kuof7avl5on3ua8e96</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>222531353080-4g97lo2jnorckqloap957uiahku6k0ku.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string></string>
+	<key>GCM_SENDER_ID</key>
+	<string>222531353080</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.degreed.Degreed-Staging.Degreed</string>
+	<key>PROJECT_ID</key>
+	<string>degreednative-android-64c3f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>degreednative-android-64c3f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:222531353080:ios:2bcc3ca0bb8c032c</string>
+	<key>DATABASE_URL</key>
+	<string>https://degreednative-android-64c3f.firebaseio.com</string>
+</dict>
+</plist>
